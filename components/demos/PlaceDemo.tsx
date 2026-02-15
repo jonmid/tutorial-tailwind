@@ -15,7 +15,8 @@ const PLACE_OPTIONS = [
 export function PlaceDemo() {
   const [place, setPlace] = useState<string>("place-content-center");
 
-  const code = `<div class="grid grid-cols-2 grid-rows-2 ${place} h-48 gap-2 border border-slate-200">
+  const code = `<!-- grid-rows-[auto_auto] hace que el grid no llene la altura; así place-content alinea el bloque -->
+<div class="grid grid-cols-2 grid-rows-[auto_auto] ${place} h-48 gap-2 border border-slate-200">
   <div class="rounded bg-violet-500/20 p-2">1</div>
   <div class="rounded bg-amber-500/20 p-2">2</div>
   <div class="rounded bg-emerald-500/20 p-2">3</div>
@@ -45,10 +46,10 @@ export function PlaceDemo() {
 
       <div>
         <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-          Resultado (grid 2x2)
+          Resultado (grid 2x2 con filas auto — el bloque se alinea dentro del contenedor)
         </h3>
         <div
-          className={`grid h-48 grid-cols-2 grid-rows-2 gap-2 rounded-xl border-2 border-dashed border-slate-300 bg-slate-50/50 p-4 dark:border-slate-600 dark:bg-slate-800/30 ${
+          className={`grid h-48 grid-cols-2 grid-rows-[auto_auto] gap-2 rounded-xl border-2 border-dashed border-slate-300 bg-slate-50/50 p-4 dark:border-slate-600 dark:bg-slate-800/30 ${
             place === "place-content-center"
               ? "place-content-center"
               : place === "place-content-start"
