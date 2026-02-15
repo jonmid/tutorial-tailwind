@@ -27,7 +27,7 @@ export default async function ColorsSlugPage({
     <PageShell
       title={page.title}
       description={page.description}
-      classes={page.classes}
+      classes={page.classes?.map((c) => ({ name: c.name, description: c.description }))}
     >
       <Demo />
     </PageShell>

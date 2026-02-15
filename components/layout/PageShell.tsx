@@ -4,7 +4,7 @@ interface PageShellProps {
   title: string;
   description: string;
   children: ReactNode;
-  classes?: { name: string; description: string }[];
+  classes?: readonly { name: string; description: string }[];
 }
 
 export function PageShell({ title, description, children, classes }: PageShellProps) {
